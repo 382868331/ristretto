@@ -12,7 +12,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v9
+      - uses: actions/stale@v11
         with:
           days-before-issue-stale: 180
           stale-issue-message: 'This issue has been stale for 60 days and will be closed automatically in 7 days. Comment to keep it open.'
