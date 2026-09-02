@@ -12,15 +12,15 @@ jobs:
   ristretto-tests:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
       - name: Run Unit Tests
         run: go test -timeout=20m -race -covermode atomic -coverprofile=covprofile ./...
       - name: Save coverage profile
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: covprofile
           path: ./covprofile
