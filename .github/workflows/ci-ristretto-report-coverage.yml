@@ -14,11 +14,11 @@ jobs:
       github.event.workflow_run.event == 'push' ) &&
       github.event.workflow_run.conclusion == 'success'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
       - name: 'Download coverage profile'
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@v9.0.0
         with:
           script: |
             var artifacts = await github.actions.listWorkflowRunArtifacts({
